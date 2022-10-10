@@ -90,20 +90,16 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text("VisageDemo"),
         ),
-        body: Center(
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
+        body: Column(mainAxisAlignment: MainAxisAlignment.start,
+          children:[ Container(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                image != null ? Image.file(image!,width: 400,
-                  height: 400,): Text("No image selected"),
+                image != null ? Image.file(image!, width: 400,height: 400,): Text("No image selected"),
               ],
             ),
-          ),
-
+          ),]
           ),
 
 
