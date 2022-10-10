@@ -84,6 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,25 +101,40 @@ class _MyHomePageState extends State<MyHomePage> {
                 image != null ? Image.file(image!, width: 400,height: 400,): Text("No image selected"),
               ],
             ),
-          ),]
+          ),
+            Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text("RESULTS:")
+                ],
+              ),
+            ),]
           ),
 
 
       floatingActionButton:
-      Row(mainAxisAlignment: MainAxisAlignment.end, children:[
+      Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children:[
           FloatingActionButton(
           child: Icon(Icons.add_a_photo),
           onPressed: () {
             pickImage();
           }
           ),
+
           FloatingActionButton(
               child: Icon(Icons.camera),
               onPressed: () {
                 pickImageC();
               }
           ),
-
+          FloatingActionButton(
+              child: Icon(Icons.send),
+              onPressed: () {
+                pickImageC();
+              }
+          ),
        ] //Children
       ),
     );
