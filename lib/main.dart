@@ -88,40 +88,45 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Image Picker Example"),
+          title: const Text("VisageDemo"),
         ),
         body: Center(
-          child: Column(
-            children: [
-              MaterialButton(
-                  color: Colors.blue,
-                  child: const Text(
-                      "Pick Image from Gallery",
-                      style: TextStyle(
-                          color: Colors.white70, fontWeight: FontWeight.bold
-                      )
-                  ),
-                  onPressed: () {
-                    pickImage();
-                  }
-              ),
-              MaterialButton(
-                  color: Colors.blue,
-                  child: const Text(
-                      "Pick Image from Camera",
-                      style: TextStyle(
-                          color: Colors.white70, fontWeight: FontWeight.bold
-                      )
-                  ),
-                  onPressed: () {
-                    pickImageC();
-                  }
-              ),
-              SizedBox(height: 20,),
-              image != null ? Image.file(image!): Text("No image selected")
-            ],
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                image != null ? Image.file(image!,width: 400,
+                  height: 400,): Text("No image selected"),
+              ],
+            ),
           ),
-        )
+
+          ),
+
+
+      floatingActionButton:
+      Row(mainAxisAlignment: MainAxisAlignment.end, children:[
+          FloatingActionButton(
+          child: Icon(Icons.add_a_photo),
+          onPressed: () {
+            pickImage();
+          }
+          ),
+          FloatingActionButton(
+              child: Icon(Icons.camera),
+              onPressed: () {
+                pickImageC();
+              }
+          ),
+
+       ] //Children
+      ),
     );
   }
 }
+
+//              SizedBox(height: 20,),
+//
